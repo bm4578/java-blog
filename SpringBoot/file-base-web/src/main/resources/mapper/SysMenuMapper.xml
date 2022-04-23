@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codetype.web.blog.mapper.SysMenuMapper">
+
+    <resultMap id="BaseResultMap" type="com.codetype.web.blog.entity.SysMenu">
+            <result property="menuId" column="menu_id" jdbcType="INTEGER"/>
+            <result property="menuPermissio" column="menu_permissio" jdbcType="TINYINT"/>
+            <result property="menuList" column="menu_list" jdbcType="VARCHAR"/>
+            <result property="menuSrc" column="menu_src" jdbcType="VARCHAR"/>
+            <result property="menuType" column="menu_type" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        menu_id,menu_permissio,menu_list,
+        menu_src,menu_type
+    </sql>
+    <select id="selectMenu" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List" /> from sys_menu where menu_permissio = #{id}
+    </select>
+    <select id="selectMenuPermission" resultMap="BaseResultMap">
+        SELECT * FROM (SELECT * FROM sys_menu WHERE sys_menu.menu_permissio = #{uid}) ti WHERE ti.menu_type = #{tid};
+    </select>
+
+</mapper>

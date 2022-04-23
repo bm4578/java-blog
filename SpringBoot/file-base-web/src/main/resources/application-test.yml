@@ -1,0 +1,86 @@
+#端口号配置
+server:
+  port: 8089
+
+spring:
+  #文件上传
+  servlet:
+    multipart:
+      max-request-size: 1024MB
+      max-file-size: 1024MB
+ #redis配置
+  redis:
+    expire: 60000
+    database: 0
+    host: 119.3.131.255
+    port: 6379
+    password: root
+#    jedis:
+#      pool:
+#        max-active: 20
+#        max-wait: -1
+#        max-idle: 10
+#        min-idle: 0
+    timeout: 10000
+#数据库
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    username: root
+    password: root517230.
+
+
+  web:
+    resources:
+      static-locations: file:${file.filePath}
+
+  mvc:
+    static-path-pattern: /**
+#jwt配置
+jwt:
+  secret: com.codetype
+  #30分钟过期
+  expiration: 1800000
+
+#登录请求配置
+itmk:
+  loginUrl: /api/user/login
+  imgUrl: /api/user/imgCode
+  register: /api/user/register
+
+#nginx映射路径
+nginx:
+  nginxUrl: "http://127.0.0.1:8089/api/article/list/img/"
+#文件上传目录
+file:
+  filePath: "/file"
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.commons.JakartaCommonsLoggingImpl
+    map-underscore-to-camel-case: true
+
+#pagehelper:
+#  helper-dialect: mysql
+#  reasonable: true
+#  support-methods-arguments: true
+#  params: count=countSql
+logging:
+  level:
+    root: info
+#    com.codetype: debug
+##日志调试
+#logging:
+#  level:
+#    root: info
+#    com.codetype.web.user.controller: debug
+#    com.codetype.web.file.controller: debug
+
+knife4j:
+  # 开启增强配置
+  enable: true
+  setting:
+    # 是否开启动态参数调试功能,默认关闭
+    enableDynamicParameter: true
+

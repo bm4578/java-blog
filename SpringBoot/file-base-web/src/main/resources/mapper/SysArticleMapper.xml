@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codetype.web.blog.mapper.SysArticleMapper">
+
+    <resultMap id="BaseResultMap" type="com.codetype.web.blog.entity.SysArticle">
+        <id property="articleId" column="article_id" jdbcType="INTEGER"/>
+        <result property="uid" column="uid" jdbcType="INTEGER"/>
+        <result property="articleTitle" column="article_title" jdbcType="VARCHAR"/>
+        <result property="articleList" column="article_list" jdbcType="VARCHAR"/>
+        <result property="articleImg" column="article_img" jdbcType="VARCHAR"/>
+        <result property="articleCreate" column="article_create" jdbcType="TIMESTAMP"/>
+        <result property="articleUpdate" column="article_update" jdbcType="TIMESTAMP"/>
+        <association property="user" javaType="com.codetype.web.blog.entity.User">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="username" column="username" jdbcType="VARCHAR"/>
+            <result property="isArticle" column="is_article" jdbcType="VARCHAR"/>
+            <result property="password" column="password" jdbcType="VARCHAR"/>
+            <result property="isImg" column="is_img" jdbcType="VARCHAR"/>
+            <result property="isPermission" column="is_permission" jdbcType="TINYINT"/>
+            <result property="isAccountNonExpired" column="is_account_non_expired" jdbcType="TINYINT"/>
+            <result property="isAccountNonLocked" column="is_account_non_locked" jdbcType="TINYINT"/>
+            <result property="isCredentialsNonExpired" column="is_credentials_non_expired" jdbcType="TINYINT"/>
+            <result property="isEnabled" column="is_enabled" jdbcType="TINYINT"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        </association>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        article_id,uid,article_title,
+        article_list,article_img,article_create,article_update
+    </sql>
+    <!--    查询文章详情-->
+    <select id="selectArticleId" resultMap="BaseResultMap">
+        SELECT *
+        FROM (SELECT *
+              FROM sys_article,
+                   sys_user
+              WHERE sys_article.uid = sys_user.is_article) ti
+        WHERE ti.article_id = #{id};
+    </select>
+
+    <!--    查询用户所写文章次数-->
+    <select id="selectFrequency" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM sys_article
+        WHERE sys_article.uid = #{id};
+    </select>
+
+    <!--    查询用户详情-->
+    <select id="selectArticle" resultMap="BaseResultMap">
+        SELECT *
+        FROM sys_article,
+             sys_user
+        WHERE sys_article.uid = sys_user.is_article order by sys_article.article_create desc
+    </select>
+
+    <!--    添加文章-->
+    <insert id="addArticle">
+        INSERT INTO sys_article (article_id, uid, article_title, article_list, article_img, article_create,
+                                 article_update)
+        values (#{articleId}, #{uid}, #{articleTitle}, #{articleList}, #{articleImg}, #{articleCreate},
+                #{articleUpdate})
+    </insert>
+
+    <!--封装用户与博客列表-->
+    <select id="articleList" resultType="com.codetype.web.blog.dto.ArticleVO">
+        select sys_article.article_id,
+               sys_user.username,
+               sys_article.article_title,
+               sys_article.article_create,
+               sys_article.article_update
+        from sys_user,
+             sys_article
+        where sys_article.uid = sys_user.is_article;
+    </select>
+    <select id="selectNameList" resultType="com.codetype.web.blog.dto.ArticleVO">
+        select sys_article.article_id,
+               sys_user.username,
+               sys_article.article_title,
+               sys_article.article_update,
+               sys_article.article_create
+        from sys_article,
+             sys_user
+        where sys_user.is_article = sys_article.uid and sys_user.username = #{username};
+    </select>
+<!--    分页查询-->
+    <select id="selectPageArticle" resultMap="BaseResultMap">
+        SELECT *
+        FROM sys_article,
+             sys_user
+        WHERE sys_article.uid = sys_user.is_article order by sys_article.article_create desc
+    </select>
+    <!--修改文章-->
+    <update id="updateArticle">
+        update sys_article ,sys_user
+        set sys_article.article_title = #{articleTitle},
+            sys_article.article_list= #{articleList},
+            sys_article.article_img= #{articleImg}
+        where sys_article.article_id = #{articleId}
+    </update>
+
+    <!--    删除文章-->
+    <delete id="deleteByArticle">
+        delete
+        from sys_article
+        where article_id = #{id};
+    </delete>
+
+</mapper>

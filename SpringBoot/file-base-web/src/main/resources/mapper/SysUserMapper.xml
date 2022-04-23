@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codetype.web.blog.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.codetype.web.blog.entity.User">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="isArticle" column="is_article" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="isImg" column="is_img" jdbcType="VARCHAR"/>
+        <result property="isPermission" column="is_permission" jdbcType="TINYINT"/>
+        <result property="isAccountNonExpired" column="is_account_non_expired" jdbcType="TINYINT"/>
+        <result property="isAccountNonLocked" column="is_account_non_locked" jdbcType="TINYINT"/>
+        <result property="isCredentialsNonExpired" column="is_credentials_non_expired" jdbcType="TINYINT"/>
+        <result property="isEnabled" column="is_enabled" jdbcType="TINYINT"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,username,password,is_article,
+        is_account_non_expired,is_img,is_permission,is_account_non_locked,is_credentials_non_expired,
+        is_enabled,create_time,update_time
+    </sql>
+    <!--注册-->
+    <insert id="add" parameterType="com.codetype.web.blog.entity.User" useGeneratedKeys="true" keyProperty="id">
+        insert into sys_user (id, is_article, username, password, is_img, is_permission, is_account_non_expired,
+                              is_account_non_locked, is_credentials_non_expired, is_enabled, create_time, update_time)
+        values (#{id}, #{isArticle}, #{username}, #{password}, #{isImg}, #{isPermission}, #{isAccountNonExpired},
+                #{isAccountNonLocked}, #{isCredentialsNonExpired}, #{isEnabled}, #{createTime}, #{updateTime})
+    </insert>
+    <!--  登录-->
+    <select id="getUsersName" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from sys_user where username = #{username};
+    </select>
+    <!--    查询所有用户-->
+    <select id="selectAll" resultType="com.codetype.web.blog.entity.User">
+        select
+        <include refid="Base_Column_List"/>
+        from sys_user;
+    </select>
+
+    <!--    查询用户基本信息-->
+    <select id="selectalluser" resultType="com.codetype.web.blog.dto.UserVO">
+        select id,
+               username,
+               is_img,
+               is_permission,
+               is_enabled,
+               create_time
+        from sys_user;
+    </select>
+<!--   通过用户查询基本信息 -->
+    <select id="selectUsername" resultType="com.codetype.web.blog.dto.UserVO">
+        select id,
+               sys_user.username,
+               sys_user.is_article,
+               sys_article.article_id,
+               sys_user.is_img,
+               sys_user.is_permission,
+               sys_user.is_enabled,
+               sys_user.create_time
+        from sys_user,sys_article where username = #{username}
+    </select>
+
+    <!--通过主键修改数据-->
+    <update id="updateUserVo">
+        update blog.sys_user
+        <set>
+            <if test="username != null and username != ''">
+                username = #{username},
+            </if>
+            <if test="password != null and password != ''">
+                password = #{password},
+            </if>
+            <if test="isImg != null">
+                is_img = #{isImg},
+            </if>
+            <if test="isPermission != null">
+                is_permission = #{isPermission},
+            </if>
+            <if test="isAccountNonExpired != null">
+                is_account_non_expired = #{isAccountNonExpired},
+            </if>
+            <if test="isAccountNonLocked != null">
+                is_account_non_locked = #{isAccountNonLocked},
+            </if>
+            <if test="isCredentialsNonExpired != null">
+                is_credentials_non_expired = #{isCredentialsNonExpired},
+            </if>
+            <if test="isEnabled != null">
+                is_enabled = #{isEnabled},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+</mapper>

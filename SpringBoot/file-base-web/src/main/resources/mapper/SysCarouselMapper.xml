@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.codetype.web.blog.mapper.SysCarouselMapper">
+
+    <resultMap id="BaseResultMap" type="com.codetype.web.blog.entity.SysCarousel">
+            <id property="sysId" column="sys_id" jdbcType="INTEGER"/>
+            <result property="sysUrl" column="sys_url" jdbcType="VARCHAR"/>
+            <result property="sysCreate" column="sys_create" jdbcType="TIMESTAMP" />
+            <result property="sysUpdate" column="sys_update" jdbcType="TIMESTAMP" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        sys_id,sys_url,sys_create,sys_update
+    </sql>
+    <insert id="addBySysUrl">
+        insert into sys_carousel (sys_id, sys_url,sys_update,sys_create) VALUES (#{sysId},#{sysUrl},#{sysUpdate},#{sysCreate})
+    </insert>
+    <update id="updateSysUrl">
+        update sys_carousel set sys_url = #{sysUrl} where sys_id = #{sysId}
+    </update>
+    <delete id="deleteBySysUrl">
+        delete
+        from sys_carousel
+        where sys_id = #{id};
+    </delete>
+
+    <select id="selectBySysId" resultType="com.codetype.web.blog.entity.SysCarousel">
+        select *
+        from sys_carousel where sys_id = #{id};
+    </select>
+
+    <select id="selectBySysUrl" resultType="com.codetype.web.blog.entity.SysCarousel">
+        select sys_id, CONCAT('',sys_url)  as sys_url,sys_update,sys_create from sys_carousel
+    </select>
+</mapper>
