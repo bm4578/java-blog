@@ -1,0 +1,32 @@
+{
+  "name": "vuetify",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "axios": "^0.26.1",
+    "core-js": "^3.8.3",
+    "element-ui": "^2.15.6",
+    "mavon-editor": "^2.10.4",
+    "vue": "^2.6.14",
+    "vue-axios": "^3.4.1",
+    "vue-router": "^3.5.1",
+    "vuetify": "^2.6.4",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@mdi/font": "^6.5.95",
+    "@nuxtjs/vuetify": "^1.12.3",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-plugin-vuex": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "vue-cli-plugin-vuetify": "~2.4.8",
+    "vue-template-compiler": "^2.6.14",
+    "vuelidate": "^0.7.7",
+    "wangeditor": "^4.7.12"
+  }
+}
