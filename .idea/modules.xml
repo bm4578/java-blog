@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SpringBoot/SpringBoot.iml" filepath="$PROJECT_DIR$/SpringBoot/SpringBoot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/blog-project.iml" filepath="$PROJECT_DIR$/.idea/blog-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBoot/file-base-common/file-base-common.iml" filepath="$PROJECT_DIR$/SpringBoot/file-base-common/file-base-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBoot/file-base-web/file-base-web.iml" filepath="$PROJECT_DIR$/SpringBoot/file-base-web/file-base-web.iml" />
+    </modules>
+  </component>
+</project>

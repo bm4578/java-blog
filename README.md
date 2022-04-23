@@ -6,15 +6,30 @@
 ### SpringBoot
 1. 首先导入数据库
 2. 分别启动Redis和MySQL服务
+   ![image](images/redis.png)
 3. 然后添加maven工程，并进入SpringBoot/file-base-web/src/main/resources/application-test.yml 中修改自己的数据库名和redis服务
+   ![image](images/maven.png)
 4. 然后启动springboot项目 ，在浏览器输入http://localhost:8089/doc.html
-
+   ![image](images/后端.png)
 ### Vue
 1. 进入terminal输入npm install
+   ![image](images/前端运行.png)
 2. 然后浏览器输入http://localhost:3002
+   ![image](images/前端效果图%201.png)
 
 后端效果图  <br/>
 ![image](images/后端.png)
+前端效果图  <br/>
+![image](images/前端效果图%201.png)
+![image](images/前端效果图2.png)
+![image](images/效果图3.png)
+
+
+<h2>有问题可以联系作者一起学习(在校大学生一枚)</h2>
+![image](images/img.png)
+<h2>一个人开发不易，若对你有帮助也可以请作者喝茶</h2>
+![image](images/img_1.png)
+
 
  
 
