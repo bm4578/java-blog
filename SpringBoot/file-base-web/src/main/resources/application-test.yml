@@ -12,9 +12,9 @@ spring:
   redis:
     expire: 60000
     database: 0
-    host: 119.3.131.255
+    host: localhost
     port: 6379
-    password: root
+    password: 
 #    jedis:
 #      pool:
 #        max-active: 20
