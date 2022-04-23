@@ -6,8 +6,7 @@
 1. 首先导入数据库
 2. 分别启动Redis和MySQL服务
 3. 然后进入SpringBoot/file-base-web/src/main/resources/application-test.yml 中修改自己的数据库名和redis服务
-4.然后启动springboot项目 ，在浏览器输入http://localhost:8089/doc.html
-!(DB/%E6%88%AA%E5%B1%8F2022-04-23%20%E4%B8%8B%E5%8D%883.55.13.png)
+4. 然后启动springboot项目 ，在浏览器输入http://localhost:8089/doc.html
 
 
  
