@@ -5,11 +5,15 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.UUID;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class UserServiceTest {
-
 @Autowired
 private UserService userService;
     @Test
@@ -32,11 +36,4 @@ private UserService userService;
 //        String replace = UUID.randomUUID().toString().replace("-", "");
         System.out.println();
     }
-
-    @Test
-    void port(){
-
-
-    }
-
 }

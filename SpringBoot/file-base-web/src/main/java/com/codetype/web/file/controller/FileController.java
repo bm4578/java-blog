@@ -1,7 +1,5 @@
 package com.codetype.web.file.controller;
 
-import com.codetype.utils.ResultUtils;
-import com.codetype.utils.ResultVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -16,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.net.InetAddress;
@@ -82,6 +79,6 @@ public class FileController {
         //4.获取响应输出流
         ServletOutputStream outputStream = response.getOutputStream();
         //使用工具类将输入流复制给输出流
-       FileCopyUtils.copy(fileInputStream, outputStream);
+        FileCopyUtils.copy(fileInputStream, outputStream);
     }
 }

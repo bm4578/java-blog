@@ -12,9 +12,9 @@ spring:
   redis:
     expire: 60000
     database: 0
-    host: 43.138.51.248
-    port: 16379
-    password: 123456
+    host: localhost
+    port: 6379
+    password: 
 #    jedis:
 #      pool:
 #        max-active: 20
@@ -29,6 +29,8 @@ spring:
     url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
     username: root
     password: root517230.
+
+
   web:
     resources:
       static-locations: file:${file.filePath}
@@ -46,6 +48,7 @@ itmk:
   loginUrl: /api/user/login
   imgUrl: /api/user/imgCode
   register: /api/user/register
+
 #文件上传目录
 file:
   filePath: "/file"
@@ -62,7 +65,7 @@ mybatis:
 #  params: count=countSql
 logging:
   level:
-    root: warn
+    root: info
 #    com.codetype: debug
 ##日志调试
 #logging:
