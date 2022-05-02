@@ -44,5 +44,9 @@
 <img class="embed-responsive embed-responsive-4by3" id="imgTag" alt="预览图像" src="https://link.ap1.storjshare.io/s/jv374zfqffkgmnhe4a55oqzfjkoa/demo-bucket/test.png?wrap=0" style="display: block;">
 
 
- 
+
+
+docker run --name nginx -p 80:80 -v /home/docker/nginx/conf/nginx.conf:/etc/nginx/nginx.conf -v /home/docker/nginx/html:/usr/share/nginx/html -d nginx:latest
+docker run --name nginx -p 80:80 -v /home/docker/nginx.conf:/etc/nginx/conf/nginx.conf:ro -v /home/docker/nginx/html:/usr/share/nginx/html:ro -d nginx:latest
+
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="58f3b365-9969-4451-9048-72aa12957ac6" name="docker">
+        <fileTransfer accessType="SFTP" host="192.168.31.145" port="22" sshConfigId="e130b1fc-78ba-46f1-b804-931149724786" sshConfig="root@192.168.31.145:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="7812e8c5-9904-48b9-8a38-6ebcfede8625" name="frps" url="http://43.138.51.248">
+        <fileTransfer accessType="SFTP" sshConfigId="acb91822-7dbf-46e6-9666-ab1928581386" sshConfig="frps">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="d0925667-6f7f-49b6-81bf-3abec372928a" name="PVE">
+        <fileTransfer accessType="SFTP" host="192.168.31.3" port="22" sshConfigId="ec6d0466-a512-421d-bb5e-797a60863ade" sshConfig="root@192.168.31.3:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="52f3b369-d351-4c25-8832-6eaf98471064" name="Frpc">
+        <fileTransfer accessType="SFTP" host="43.138.51.248" port="32" sshConfigId="a719f8b0-78be-4d4b-83db-5d2af8ef4a58" sshConfig="root@43.138.51.248:32 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

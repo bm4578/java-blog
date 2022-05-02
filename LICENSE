@@ -125,3 +125,15 @@
                http://license.coscl.org.cn/MulanPSL2 
    THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.  
    See the Mulan PSL v2 for more details.  
+docker run -d \
+  --name=chevereto \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Asia/Shanghai \
+  -p 80:80 \
+  -p 443:443 \
+  -v /data/chevereto/config:/config \
+  -v /data/chevereto/data:/data \
+  -m 150m\
+  --restart unless-stopped \
+  linuxserver/chevereto

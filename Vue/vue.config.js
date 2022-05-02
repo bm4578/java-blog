@@ -8,7 +8,7 @@ module.exports = defineConfig({
     //跨域代理服务
     proxy: {
       '/api': {
-        target: 'http://localhost:8089',
+        target: 'http://43.138.51.248:9000/',
         changeOrigin: true,
         ws: false,
         pathRewrite: {
@@ -16,7 +16,7 @@ module.exports = defineConfig({
         }
       },
       '/file': {
-        target: 'http://localhost:8089',
+        target: 'http://43.138.51.248:9000/',
         changeOrigin: true,
         ws: false,
         pathRewrite: {

@@ -19,6 +19,7 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.net.InetAddress;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -29,8 +30,8 @@ import java.util.UUID;
 @Api(tags = "文件中心")
 public class FileController {
     private static final Logger log = LoggerFactory.getLogger(FileController.class);
-    @Value("${nginx.nginxUrl}")
-    private String nginxUrl;
+    @Value("${server.port}")
+    private String port;
     @Value("${file.filePath}")
     private String filePath;
 
@@ -58,8 +59,11 @@ public class FileController {
         if (!dateDir.exists())dateDir.mkdirs();
         //文件上传
         file.transferTo(new File(dateDir,newFileName));
-        log.debug("图片路径:"+nginxUrl+newFileName);
-        return nginxUrl+newFileName ;
+        //获取tomcat服务器地址
+        InetAddress localHost = InetAddress.getLocalHost();
+        String url = "http://"+localHost.getHostAddress()+":"+port;
+        String imgUrl = url+"/api/article/list/img/";
+        return imgUrl+newFileName ;
     }
     @ApiOperation(value = "文件下载")
     @ApiImplicitParams({

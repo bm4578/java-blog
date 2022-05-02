@@ -4,6 +4,8 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import javax.servlet.http.HttpServletRequest;
+
 @SpringBootApplication
 @MapperScan("com.codetype.web.blog.mapper")
 public class Application {
