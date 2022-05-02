@@ -29,6 +29,8 @@ public class FileController {
     private static final Logger log = LoggerFactory.getLogger(FileController.class);
     @Value("${server.port}")
     private String port;
+    @Value("${nginx.nginxUrl}")
+    private String nginxUrl;
     @Value("${file.filePath}")
     private String filePath;
 
@@ -57,9 +59,7 @@ public class FileController {
         //文件上传
         file.transferTo(new File(dateDir,newFileName));
         //获取tomcat服务器地址
-        InetAddress localHost = InetAddress.getLocalHost();
-        String url = "http://"+localHost.getHostAddress()+":"+port;
-        String imgUrl = url+"/api/article/list/img/";
+        String imgUrl = nginxUrl+"/api/article/list/img/";
         return imgUrl+newFileName ;
     }
     @ApiOperation(value = "文件下载")
