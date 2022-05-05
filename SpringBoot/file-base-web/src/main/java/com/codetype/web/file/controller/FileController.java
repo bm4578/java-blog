@@ -16,7 +16,6 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
-import java.net.InetAddress;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -27,8 +26,6 @@ import java.util.UUID;
 @Api(tags = "文件中心")
 public class FileController {
     private static final Logger log = LoggerFactory.getLogger(FileController.class);
-    @Value("${server.port}")
-    private String port;
     @Value("${nginx.nginxUrl}")
     private String nginxUrl;
     @Value("${file.filePath}")
@@ -58,7 +55,7 @@ public class FileController {
         if (!dateDir.exists())dateDir.mkdirs();
         //文件上传
         file.transferTo(new File(dateDir,newFileName));
-        //获取tomcat服务器地址
+//        return nginxUrl+newFileName ;
         String imgUrl = nginxUrl+"/api/article/list/img/";
         return imgUrl+newFileName ;
     }

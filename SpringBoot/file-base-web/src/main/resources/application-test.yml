@@ -48,7 +48,8 @@ itmk:
   loginUrl: /api/user/login
   imgUrl: /api/user/imgCode
   register: /api/user/register
-#服务器IP
+
+#服务器IP地址
 nginx:
   nginxUrl: "http://127.0.0.1:8089"
 #文件上传目录
