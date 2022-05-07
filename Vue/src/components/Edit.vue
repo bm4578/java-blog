@@ -82,6 +82,7 @@ export default {
     }
   },
   methods: {
+
     getEditorData() {
       // 通过代码获取编辑器内容
       let data = this.editor.txt.html()

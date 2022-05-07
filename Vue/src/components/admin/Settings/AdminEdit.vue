@@ -86,7 +86,6 @@ export default {
       params.append("articleTitle",this.name)
       params.append("articleList",data)
       params.append("articleImg",this.imageUrl)
-
       axios.post('/api/article/list/addArticle',params).then(resp=>{
         if (resp.data.data){
           this.$message({

@@ -136,6 +136,7 @@ export default {
     })
     axios.get("/api/article/list/getCarousel/" + 1).then(resp => {
       this.text = resp.data.data.sysText
+
     })
   }
 }

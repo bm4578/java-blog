@@ -130,7 +130,6 @@ export default {
     editItem(item) {
       this.editedIndex = this.desserts.indexOf(item)
       this.editedItem = Object.assign({}, item)
-      console.log(item.articleId)
       this.$router.push({ name: 'pagesEdit', params: { uid: item.articleId} });
     },
 

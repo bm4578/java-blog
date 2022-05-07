@@ -117,7 +117,6 @@ export default {
       params.append("token",window.localStorage.getItem("token"))
       axios.post('/api/user/loginOut',params).then(resp=>{
         const _this = resp.data
-        console.log(_this.msg)
         if (resp.data.code === 200){
           this.$notify({
             title: '成功',

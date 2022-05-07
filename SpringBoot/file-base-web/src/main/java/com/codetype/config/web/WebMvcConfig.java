@@ -28,6 +28,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         String property = System.getProperty("user.dir");
-        registry.addResourceHandler("/api/article/list/img/**").addResourceLocations("file:"+property+"/file/");
+        registry.addResourceHandler("/api/article/list/img/**").addResourceLocations("file://"+property+"/file/");
     }
 }

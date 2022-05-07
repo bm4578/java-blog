@@ -121,10 +121,8 @@ export default {
   methods:{
     initialize() {
       this.user = JSON.parse(window.localStorage.getItem("user"))
-      console.log(this.user)
       axios.get('/api/article/'+this.user.username).then(resp=>{
         this.desserts = resp.data.data
-        console.log(this.desserts)
       })
     },
 
@@ -132,7 +130,6 @@ export default {
     editItem(item) {
       this.editedIndex = this.desserts.indexOf(item)
       this.editedItem = Object.assign({}, item)
-      console.log(item.articleId)
       this.$router.push({ name: 'pagesEdit', params: { uid: item.articleId} });
     },
 

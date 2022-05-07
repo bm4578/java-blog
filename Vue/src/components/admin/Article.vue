@@ -87,7 +87,6 @@ export default {
     axios.post("/api/article/list/" + this.$route.params.num).then(resp => {
       this.articleUser = resp.data.data[0].user
       this.articleList= resp.data.data[0].articleList
-      console.log(this.articleUser)
     })
   }
 }

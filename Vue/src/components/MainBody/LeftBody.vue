@@ -55,7 +55,6 @@ export default {
     })
     axios.get("api/article/list/page/"+this.curPage+"/"+this.limit).then(resp=>{
       this.article = resp.data.list
-      console.log(this.article)
       this.page = resp.data.pages
     })
   },methods:{

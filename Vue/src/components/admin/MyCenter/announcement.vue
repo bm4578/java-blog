@@ -153,7 +153,6 @@ export default {
       this.editedItem = Object.assign({}, item)
       this.text = item.sysText
       this.id = item.sysId
-      console.log(this.id)
       this.dialog = true
     },
     close() {

@@ -232,7 +232,6 @@ export default {
     },
     //保存
     save() {
-      console.log(this.imageUrl)
       const params = new URLSearchParams();
       params.append("sysUrl", this.imageUrl)
      axios.post('/api/getCarousel',params).then(resp=>{
