@@ -27,7 +27,7 @@
     <v-container class="grey lighten-5">
       <v-row no-gutters>
         <v-col
-            cols="6"
+            cols="20"
             md="4"
         >
           <v-card
@@ -119,7 +119,7 @@ export default {
 
 <style scoped>
 .app{
-  width: 1300px;
+  width: 100%;
   margin: 0 auto;
 }
 /* 鼠标移动到链接的颜色 */
@@ -136,4 +136,5 @@ a:hover {
 .router-link-active {
   color: #1976d2;
 }
+
 </style>

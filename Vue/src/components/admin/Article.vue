@@ -30,7 +30,7 @@
               outlined
               tile
           >
-            <div class="markdown-body" v-html="articleList" style="font-size: 20px;margin: 30px"></div>
+            <div class="markdown-body" v-html="articleList"></div>
           </v-card>
         </v-col>
 <!--        i.articleList-->
@@ -38,6 +38,7 @@
         <v-col
             cols="6"
             md="3"
+            class="user"
         >
           <v-card
               class="mx-auto"
@@ -94,7 +95,12 @@ export default {
 
 <style scoped>
 .app{
-  width: 1300px;
+  width: 100%;
   margin: 0 auto;
+}
+@media screen and (max-width: 960px) {
+  .user {
+    display: none;
+  }
 }
 </style>

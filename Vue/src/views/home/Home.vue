@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <v-container class="grey lighten-5">
-      <v-row>
+      <v-row class="img">
         <!--        轮播图-->
         <v-col
             cols="12"
@@ -20,7 +20,6 @@
         <v-col
             cols="3"
             md="4"
-            class="right"
         >
           <v-card
               class="mx-auto"
@@ -84,7 +83,7 @@
       <br>
       <br>
       <!--      工具栏-->
-      <v-card>
+      <v-card class="tool">
         <v-tabs
             background-color="indigo lighten-5"
             show-arrows
@@ -143,17 +142,12 @@ export default {
 </script>
 
 <style scoped>
-.app {
-  width: 1300px;
-  margin: 0 auto;
-}
-
 .el-carousel__item h3 {
   color: #475669;
   font-size: 14px;
   opacity: 0.75;
-  line-height: 150px;
-  margin: 0;
+  line-height: 60px;
+  margin: 0 ;
 }
 a{
   text-decoration: none;
@@ -167,6 +161,12 @@ a{
 }
 @media screen and (max-width: 960px) {
   .right {
+    display: none;
+  }
+  .tool{
+    display: none;
+  }
+  .img{
     display: none;
   }
 }

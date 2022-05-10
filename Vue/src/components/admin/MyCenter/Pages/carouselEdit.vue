@@ -17,7 +17,7 @@
                 :show-file-list="false"
                 :on-success="handleAvatarSuccess"
                 :before-upload="beforeAvatarUpload">
-              <img v-if="imageUrl" :src="imageUrl" width="400px" height="150px">
+              <img v-if="imageUrl" :src="imageUrl" width="100%" height="150px">
               <i v-else class="el-icon-plus avatar-uploader-icon"></i>
             </el-upload>
           </div>
@@ -84,7 +84,7 @@ export default {
 
 <style scoped>
 .app {
-  width: 760px;
+  width: 100%;
   margin: 0 auto;
 }
 

@@ -129,7 +129,7 @@ export default {
 
 <style scoped>
 .app{
-  width: 1300px;
+  width: 100%;
   margin: 0 auto;
 }
 .avatar-uploader .el-upload {

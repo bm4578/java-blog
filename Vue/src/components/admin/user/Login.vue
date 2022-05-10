@@ -5,7 +5,7 @@
       <v-col order="last">
       </v-col>
 
-      <v-col style="margin: 100px">
+      <v-col class="module">
             <v-card width="500px" height="430px">
               <br>
               <v-card-title>
@@ -155,7 +155,13 @@ export default {
 
 <style scoped>
 .app{
-  width: 1300px;
+  width: 100%;
   margin: 0 auto;
+}
+
+@media screen and (min-width: 960px) {
+  .module {
+    margin: 100px;
+  }
 }
 </style>

@@ -121,7 +121,7 @@ export default {
 
 <style scoped>
 .app{
-  width: 760px;
+  width: 100%;
   margin: 0 auto;
 }
 .avatar-uploader .el-upload {
@@ -130,6 +130,9 @@ export default {
   cursor: pointer;
   position: relative;
   overflow: hidden;
+}
+.router-link-active {
+  color: #1976d2;
 }
 .avatar-uploader .el-upload:hover {
   border-color: #409EFF;
