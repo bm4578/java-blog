@@ -18,6 +18,10 @@ const routes = [
         path: '/edit',
         name: 'edit',
         component: ()=>import('@/components/Edit')
+      },{
+        path: '/message',
+        name: 'message',
+        component: ()=>import('@/components/MyMessage')
       },
       {
         path: '/login',

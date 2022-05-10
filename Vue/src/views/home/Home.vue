@@ -35,6 +35,7 @@
                 <v-btn
                     color="cyan accent-1"
                     text
+                    :to="{name:'message'}"
                 >
                   加入我们
                 </v-btn>
