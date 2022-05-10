@@ -17,7 +17,7 @@
             prepend-inner-icon="mdi-magnify"
         ></v-text-field>
       </div>
-      <div v-if='this.condition' style="margin: auto 80px">
+      <div v-if='this.condition' style="margin-left:80px; margin-top: 5px">
         <v-menu
             bottom
             min-width="20px"
