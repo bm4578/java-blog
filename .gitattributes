@@ -1,0 +1,4 @@
+*.java linguist-language=SpringBoot
+*.xml linguist-language=Mybatisplus
+*.sql linguist-language=mysql
+*.vue linguist-language=Vue
