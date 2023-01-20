@@ -38,11 +38,5 @@
 <img class="embed-responsive embed-responsive-4by3" id="imgTag" alt="预览图像" src="https://link.ap1.storjshare.io/s/juwy4mzbcirai2jmektu3x6dlzwq/demo-bucket/T.png?wrap=0" style="display: block;">
 
 
-
-<h2>一个人开发不易，若对你有帮助也可以请作者喝茶</h2>
-
-<img class="embed-responsive embed-responsive-4by3" id="imgTag" alt="预览图像" src="https://link.ap1.storjshare.io/s/jv374zfqffkgmnhe4a55oqzfjkoa/demo-bucket/test.png?wrap=0" style="display: block;">
-
-
  
 
