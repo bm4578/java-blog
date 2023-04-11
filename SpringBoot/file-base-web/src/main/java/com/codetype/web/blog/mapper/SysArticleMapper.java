@@ -1,5 +1,6 @@
 package com.codetype.web.blog.mapper;
 
+import com.codetype.web.blog.dto.SearchVO;
 import com.codetype.web.blog.entity.SysArticle;
 import com.codetype.web.blog.dto.ArticleVO;
 import org.apache.ibatis.annotations.Mapper;
@@ -68,4 +69,9 @@ public interface SysArticleMapper {
      * 删除文章
      */
     Integer deleteByArticle(Integer id);
+
+    /**
+     * 模糊查询
+     */
+    List<SearchVO> searchList(String articleName);
 }

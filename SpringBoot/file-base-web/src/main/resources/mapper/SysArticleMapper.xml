@@ -108,5 +108,9 @@
         from sys_article
         where article_id = #{id};
     </delete>
+    <!--搜索-->
+    <select id="searchList" resultType="com.codetype.web.blog.dto.SearchVO">
+        SELECT sys_article.article_id,sys_article.article_title FROM sys_article WHERE sys_article.article_title LIKE concat('%',#{articleName},'%')
+    </select>
 
 </mapper>

@@ -2,6 +2,7 @@ package com.codetype.web.blog.controller;
 
 import com.codetype.utils.ResultVo;
 import com.codetype.web.blog.dto.ArticleVO;
+import com.codetype.web.blog.dto.SearchVO;
 import com.codetype.web.blog.entity.SysAnnouncement;
 import com.codetype.web.blog.entity.SysArticle;
 import com.codetype.web.blog.entity.SysCarousel;
@@ -101,6 +102,15 @@ public class SysArticleController {
         List<ArticleVO> articleVOS = sysArticleService.articleList();
         return new ResultVo("",200,articleVOS);
     }
+    /**
+     * 封装用户查询博客列表
+     */
+    @ApiOperation(value = "模糊搜索")
+    @GetMapping("/list/searchList")
+    public ResultVo searchList(String searchName){
+        List<SearchVO> articleVOS = sysArticleService.searchList(searchName);
+        return new ResultVo("",200,articleVOS);
+    }
 
     /**
      * 编辑博客
@@ -143,4 +153,6 @@ public class SysArticleController {
         SysAnnouncement sysAnnouncement = sysAnnouncementService.selectByPrimaryKey(id);
         return new ResultVo("",200,sysAnnouncement);
     }
+
+
 }

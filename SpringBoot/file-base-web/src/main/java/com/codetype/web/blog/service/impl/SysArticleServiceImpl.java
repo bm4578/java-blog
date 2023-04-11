@@ -2,6 +2,7 @@ package com.codetype.web.blog.service.impl;
 
 
 import com.codetype.web.blog.dto.ArticleVO;
+import com.codetype.web.blog.dto.SearchVO;
 import com.codetype.web.blog.entity.SysArticle;
 import com.codetype.web.blog.service.SysArticleService;
 import com.codetype.web.blog.mapper.SysArticleMapper;
@@ -120,5 +121,15 @@ implements SysArticleService{
     @Override
     public Boolean deleteByArticle(Integer id) {
         return sysArticleMapper.deleteByArticle(id) > 0 ;
+    }
+
+    /**
+     * 模糊查询
+     *
+     * @param articleName
+     */
+    @Override
+    public List<SearchVO> searchList(String articleName) {
+        return sysArticleMapper.searchList(articleName);
     }
 }

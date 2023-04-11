@@ -84,22 +84,7 @@
       <br>
       <br>
       <!--      工具栏-->
-      <v-card class="tool">
-        <v-tabs
-            background-color="indigo lighten-5"
-            show-arrows
-        >
-          <v-tabs-slider color="teal lighten-3"></v-tabs-slider>
-
-          <v-tab
-              v-for="i in 30"
-              :key="i.index"
-              :href="'#tab-' + i"
-          >
-            Item {{ i }}
-          </v-tab>
-        </v-tabs>
-      </v-card>
+      <hr>
       <br>
       <v-row>
         <LeftBody />

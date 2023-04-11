@@ -4,13 +4,15 @@ import com.codetype.utils.ResultVo;
 import com.codetype.web.blog.entity.SysCarousel;
 import com.codetype.web.blog.service.SysCarouselService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Api(value = "轮播图")
+@Api(tags = "轮播图")
 @RestController
 @RequestMapping("/api/getCarousel")
 public class SysCarouselController {
@@ -21,8 +23,8 @@ public class SysCarouselController {
      * 查询
      * @return
      */
+    @ApiOperation(value = "查询所有", notes = "查询", httpMethod = "GET")
     @GetMapping
-    @ApiOperation(value = "查询所有")
     public ResultVo selectAllCarousel(){
         List<SysCarousel> sysCarousels = sysCarouselService.selectBySysUrl();
         return new ResultVo("",200,sysCarousels);
@@ -33,8 +35,11 @@ public class SysCarouselController {
      * @param id
      * @return
      */
+    @ApiImplicitParams({
+            @ApiImplicitParam(paramType = "path", dataType = "int", name = "id", value = "", required = true)
+    })
+    @ApiOperation(value = "按照id查询", notes = "按id查询", httpMethod = "GET")
     @GetMapping("/{id}")
-    @ApiOperation(value = "按照id查询")
     public ResultVo selectById(@PathVariable("id") Integer id){
         List<SysCarousel> sysCarousels = sysCarouselService.selectBySysId(id);
         return  new ResultVo("",200,sysCarousels);
@@ -44,8 +49,11 @@ public class SysCarouselController {
      * @param sysCarousel
      * @return
      */
+    @ApiImplicitParams({
+            @ApiImplicitParam(paramType = "query", dataType = "SysCarousel", name = "sysCarousel", value = "", required = true)
+    })
+    @ApiOperation(value = "新增", notes = "新增", httpMethod = "POST")
     @PostMapping
-    @ApiOperation(value ="新增")
     public ResultVo addCarousel(SysCarousel sysCarousel){
         Boolean aBoolean = sysCarouselService.addBySysUrl(sysCarousel);
         return new ResultVo("",200,aBoolean);
@@ -55,14 +63,20 @@ public class SysCarouselController {
      * @param sysCarousel
      * @return
      */
+    @ApiImplicitParams({
+            @ApiImplicitParam(paramType = "query", dataType = "SysCarousel", name = "sysCarousel", value = "", required = true)
+    })
+    @ApiOperation(value = "修改", notes = "修改", httpMethod = "PUT")
     @PutMapping
-    @ApiOperation(value = "修改")
     public ResultVo updateCarousel(SysCarousel sysCarousel){
         Boolean aBoolean = sysCarouselService.updateSysUrl(sysCarousel);
         return new ResultVo("",200,aBoolean);
     }
+    @ApiImplicitParams({
+            @ApiImplicitParam(paramType = "query", dataType = "int", name = "id", value = "", required = true)
+    })
+    @ApiOperation(value = "删除", notes = "", httpMethod = "DELETE")
     @DeleteMapping
-    @ApiOperation(value = "删除")
     public ResultVo deleteCarousel(Integer id){
         Boolean aBoolean = sysCarouselService.deleteBySysUrl(id);
         return new ResultVo("",200,aBoolean);

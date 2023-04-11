@@ -1,6 +1,7 @@
 package com.codetype.web.blog.service;
 
 import com.codetype.web.blog.dto.ArticleVO;
+import com.codetype.web.blog.dto.SearchVO;
 import com.codetype.web.blog.entity.SysArticle;
 import com.github.pagehelper.PageInfo;
 
@@ -64,5 +65,10 @@ public interface SysArticleService {
      * 删除文章
      */
     Boolean deleteByArticle(Integer id);
+
+    /**
+     * 模糊查询
+     */
+    List<SearchVO> searchList(String articleName);
 
 }
