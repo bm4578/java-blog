@@ -103,7 +103,7 @@ export default {
         required: value => !!value || '不能为空'
       },
       user: {
-        username: 'qwe',
+        username: 'test',
         password:'1234',
         code: '',
       },

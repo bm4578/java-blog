@@ -16,5 +16,5 @@ public class SearchVO {
     /**
      * 文章id
      */
-    private Integer articleId;
+    private Long articleId;
 }

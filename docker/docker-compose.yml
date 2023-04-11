@@ -44,12 +44,6 @@ services:
   redis:
     image: redis:latest
     restart: always
-    volumes:
-      - ./redis/data:/data
-      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
-      - ./redis/logs:/logs
-    command:
-      /bin/bash -c "redis-server /usr/local/etc/redis/redis.conf"
     ports:
       - "6379:6379"
 networks:

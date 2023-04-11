@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkvuetify"]=self["webpackChunkvuetify"]||[]).push([[511],{13511:(e,s,t)=>{t.r(s),t.d(s,{default:()=>f});var a=function(){var e=this,s=e.$createElement,t=e._self._c||s;return t("div",{staticClass:"app"},[e._v(" 加入我们 ")])},n=[];const u={name:"MyMessage"},c=u;var l=t(1001),r=(0,l.Z)(c,a,n,!1,null,"1b24bcbe",null);const f=r.exports}}]);
-//# sourceMappingURL=511.d5a9bcb3.js.map

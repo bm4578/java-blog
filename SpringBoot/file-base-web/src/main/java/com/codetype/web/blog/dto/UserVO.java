@@ -9,7 +9,7 @@ public class UserVO{
     /**
      * 文章id
      */
-    private Integer articleId;
+    private Long articleId;
     /**
      * 主键id
      */

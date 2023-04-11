@@ -37,7 +37,7 @@
                     text
                     :to="{name:'message'}"
                 >
-                  加入我们
+                  关于我
                 </v-btn>
               </v-card-title>
             </v-img>
@@ -62,21 +62,9 @@
               </v-tooltip>
 
             </v-card-text>
-            <v-card-actions>
-              <v-btn
-                  color="orange"
-                  text
-              >
-                Share
-              </v-btn>
-
-              <v-btn
-                  color="orange"
-                  text
-              >
-                Explore
-              </v-btn>
-            </v-card-actions>
+            <br>
+            <br>
+            <br>
           </v-card>
         </v-col>
       </v-row>

@@ -19,12 +19,12 @@ public class SysArticle implements Serializable {
     /**
      * 文章id 
      */
-    private Integer articleId;
+    private Long articleId;
 
     /**
      * 用户id
      */
-    private Integer uid;
+    private String uid;
 
     /**
      * 文章标题

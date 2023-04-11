@@ -1,6 +1,6 @@
 #端口号配置
 server:
-  port: 8089
+  port: 9000
 
 spring:
   #文件上传
@@ -14,7 +14,7 @@ spring:
     database: 0
     host: 192.168.99.101
     port: 6379
-    password: 123456
+    password:
 #    jedis:
 #      pool:
 #        max-active: 20
@@ -51,7 +51,7 @@ itmk:
 
 #服务器IP地址
 nginx:
-  nginxUrl: "http://127.0.0.1:8089"
+  nginxUrl: "http://127.0.0.1:9000"
 #文件上传目录
 file:
   filePath: "/file"
