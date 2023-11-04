@@ -3,7 +3,6 @@ package com.codetype.config.security.detailservice;
 import com.codetype.config.security.exception.UserException;
 import com.codetype.web.blog.entity.User;
 import com.codetype.web.blog.service.UserService;
-import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,9 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;
 
-import java.security.PublicKey;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 

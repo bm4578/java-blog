@@ -28,7 +28,7 @@
         <swagger2.version>3.0.0</swagger2.version>
         <swagger-ui.version>2.0.9</swagger-ui.version>
         <lombok-version>1.18.12</lombok-version>
-        <mybatis-plus.version>3.4.2</mybatis-plus.version>
+        <mybatis-plus.version>3.4.1</mybatis-plus.version>
         <druid.version>1.2.1</druid.version>
         <kaptcha.version>2.3.2</kaptcha.version>
         <fastjson.version>1.2.68</fastjson.version>

@@ -70,8 +70,13 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/swagger-resources/configuration/ui",
                         "/swagger-resources", "/swagger-resources/configuration/security",
                         "/swagger-ui.html", "/webjars/**").permitAll()
-                .antMatchers("/api/user/login","/api/user/imgCode","/api/user/register").permitAll() //禁止访问login和验证码目录之外的页面
-                .antMatchers("/api/article/list/**").permitAll()
+
+                /*
+                   设置不需要token验证权限的页面
+                   还需要在filter中设置放开token拦截的路径
+                 */
+                .antMatchers("/api/user/login","/api/user/imgCode","/api/user/register").permitAll()
+                .antMatchers("/api/article/list/**","/api/sysImg").permitAll()
                 .antMatchers("/files/**").permitAll()
                 .anyRequest().authenticated()
                 .and()

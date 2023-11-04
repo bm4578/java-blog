@@ -50,6 +50,7 @@ public class CheckTokenFilter extends OncePerRequestFilter {
         //不需要token验证
         if (StringUtils.contains(httpServletRequest.getServletPath(), "swagger")
                 || StringUtils.contains(httpServletRequest.getServletPath(), "webjars")
+                || StringUtils.contains(httpServletRequest.getServletPath(), "/api/sysImg")
                 || StringUtils.contains(httpServletRequest.getServletPath(), "/api/article/list")
                 || StringUtils.contains(httpServletRequest.getServletPath(), "/files")
                 || StringUtils.contains(httpServletRequest.getServletPath(), "doc")

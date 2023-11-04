@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codetype.web.blog.mapper.SysImgMapper">
+
+    <resultMap type="com.codetype.web.blog.entity.SysImg" id="SysImgMap">
+        <result property="imgid" column="imgID" jdbcType="INTEGER"/>
+        <result property="imgurl" column="imgURl" jdbcType="VARCHAR"/>
+    </resultMap>
+
+</mapper>
+
